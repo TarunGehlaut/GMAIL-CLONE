@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BiPencil } from "react-icons/bi";
 
 import { NavLink } from "react-router-dom";
@@ -87,9 +87,6 @@ const SideBar = () => {
               >
                 <div className="icon relative mr-[18px] flex flex-shrink-0 items-center justify-start text-xl">
                   {route.icon}
-                  {!isSideBarOpen && (
-                    <span className="absolute right-[-6px] top-[-3px] h-2 w-2 rounded-full bg-[#C5221F] "></span>
-                  )}
                 </div>
 
                 <AnimatePresence>
@@ -104,9 +101,6 @@ const SideBar = () => {
                       <span className="mr-auto  inline-block overflow-hidden text-ellipsis whitespace-nowrap align-middle    text-sm">
                         {route.name}
                       </span>
-                      <div className="ml-auto block select-none pl-4 text-xs tracking-normal text-[#5f6368] ">
-                        7,970
-                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
