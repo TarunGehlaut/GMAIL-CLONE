@@ -14,7 +14,7 @@ import Features from "./Features";
 import NoMails from "./NoMails";
 
 const Emails = () => {
-  const { isSideBarOpen, setIsSideBarOpen } = useContext(Context);
+  const { isSideBarOpen, setIsSideBarOpen, setResults } = useContext(Context);
   const [selectedEmails, setSelectedEmails] = useState([]);
 
   const [refreshScreen, setRefreshScreen] = useState(false);
@@ -105,6 +105,7 @@ const Emails = () => {
     };
   }, []);
 
+
   return (
     <>
       <div
@@ -192,6 +193,7 @@ const Emails = () => {
                 })}
               </tbody>
             </table>
+           
             <div className="w-full bg-[#F6F8FC] py-3"></div>
           </>
         )}
