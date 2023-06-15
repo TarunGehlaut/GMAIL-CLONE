@@ -47,6 +47,7 @@ const Header = () => {
 
   return (
     <header className="sticky left-0 right-0   top-0  w-full      bg-[#F6F8FC] ">
+      
       <div className="relative flex w-full min-w-min justify-between p-2">
         <div className="flex h-[48px] select-none  items-center whitespace-nowrap   align-middle md:pr-[30px]">
           <div
