@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import PFP from "../assets/anime-aesthetic-boy-pfp-1.jpg";
-import Logo from "../assets/logo_gmail.png";
+import Logo from "../assets/svg-logo.svg";
 
 import {
   AiOutlineQuestionCircle,
@@ -14,8 +14,8 @@ import { GoSettings } from "react-icons/go";
 import { Link } from "react-router-dom";
 
 import { Context } from "../context/ContextApi";
-import useApi from "../hooks/useApi";
-import { API_URLS } from "../services/api.urls";
+// import useApi from "../hooks/useApi";
+// import { API_URLS } from "../services/api.urls";
 import ToolTip from "./ToolTip";
 
 const Header = () => {
@@ -47,7 +47,6 @@ const Header = () => {
 
   return (
     <header className="sticky left-0 right-0   top-0  w-full      bg-[#F6F8FC] ">
-      
       <div className="relative flex w-full min-w-min justify-between p-2">
         <div className="flex h-[48px] select-none  items-center whitespace-nowrap   align-middle md:pr-[30px]">
           <div
@@ -61,7 +60,7 @@ const Header = () => {
             <img
               src={Logo}
               alt="Flash Mail"
-              className=" w-28 overflow-clip  align-middle "
+              className=" h-[50px] w-[200px] overflow-clip  align-middle "
             />
           </Link>
         </div>
