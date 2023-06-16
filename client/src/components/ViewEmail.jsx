@@ -64,9 +64,8 @@ const ViewEmail = () => {
           isSideBarOpen
             ? "ml-[260px] w-[calc(100%-260px)]"
             : "md:ml-[80px]  md:w-[calc(100%-80px)]"
-        } z-100 bg-white overflow-hidden`}
+        } z-100 overflow-hidden bg-white`}
       >
-        
         {/* First Part */}
         <div className="relative mr-4 flex  w-full items-center justify-between whitespace-nowrap border-none    bg-none pb-3 pl-4  pr-6 pt-6">
           <ul className=" flex" id=":2g" role="toolbar">
@@ -134,7 +133,7 @@ const ViewEmail = () => {
         {/* Middle Part Email */}
         <div className="  h-[calc(100vh-132px)]   w-full   items-start overflow-y-auto ">
           {/* Subject */}
-          <div className="flex items-center pb-2 pl-[72px] pr-0 pt-5 ">
+          <div className="flex items-center pb-2 pl-4 pr-0 pt-5 md:pl-[72px] ">
             <h2 className="m-0 inline break-words p-0 pr-[10px] text-[1.375rem] font-normal text-[#1f1f1f] outline-none">
               {email?.subject}
             </h2>
