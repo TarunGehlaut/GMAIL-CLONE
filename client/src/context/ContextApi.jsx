@@ -5,6 +5,7 @@ export const Context = createContext();
 export function AppContext({ children }) {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const [results, setResults] = useState([]);
+  const [refreshScreen, setRefreshScreen] = useState(false);
 
   return (
     <Context.Provider
@@ -13,6 +14,8 @@ export function AppContext({ children }) {
         setIsSideBarOpen,
         results,
         setResults,
+        refreshScreen,
+        setRefreshScreen,
       }}
     >
       {children}

@@ -20,7 +20,8 @@ import { API_URLS } from "../services/api.urls";
 import ToolTip from "./ToolTip";
 
 const ViewEmail = () => {
-  const { isSideBarOpen, setIsSideBarOpen } = useContext(Context);
+  const { isSideBarOpen, setIsSideBarOpen, setRefreshScreen } =
+    useContext(Context);
   const [showDetails, setShowDetails] = useState(false);
 
   const {
@@ -47,6 +48,22 @@ const ViewEmail = () => {
   }
 
   const moveEmailsToBinService = useApi(API_URLS.moveEmailsToBin);
+
+  const toggleStarredService = useApi(API_URLS.toggleStarredEmail);
+
+  const toggleStarredMail = () => {
+    try {
+      toggleStarredService.call({
+        id: email?._id,
+        value: !email?.starred,
+      });
+
+      setRefreshScreen((prevState) => !prevState);
+    } catch (error) {
+      console.log(error);
+      // Handle the error if necessary
+    }
+  };
 
   const deleteEmail = async () => {
     try {
@@ -241,7 +258,10 @@ const ViewEmail = () => {
                 <span className=" whitespace-nowrap text-xs font-normal leading-5 text-[#5e5e5e]">
                   {formatDate(email?.date)}
                 </span>
-                <span className="cursor-pointer">
+                <span
+                  onClick={() => toggleStarredMail()}
+                  className="cursor-pointer"
+                >
                   <ToolTip
                     text="Not Starred"
                     className="bottom-[calc(100%-64px)] translate-x-[-25%]"

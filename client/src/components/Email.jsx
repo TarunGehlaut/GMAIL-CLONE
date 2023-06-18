@@ -9,20 +9,23 @@ import { MdOutlineArchive } from "react-icons/md";
 
 import { routes } from "../routes/route";
 
+import { Context } from "../context/ContextApi";
+
 import dayjs from "dayjs";
 import "dayjs/locale";
+import { useContext } from "react";
 import useApi from "../hooks/useApi";
 import { API_URLS } from "../services/api.urls";
 
 const Email = ({
   email,
   selectedEmails,
-  setRefreshScreen,
   setSelectedEmails,
   deleteSelectedEmails,
   archiveSelectedEmails,
 }) => {
   const navigate = useNavigate();
+  const { setRefreshScreen } = useContext(Context);
 
   function timeDelays() {
     const now = dayjs();
