@@ -12,13 +12,11 @@ import useApi from "../hooks/useAPI";
 import { API_URLS } from "../services/api.urls";
 import ToolTip from "./ToolTip";
 
-
 const ComposeMail = ({ setShowMailModel }) => {
   const [data, setData] = useState({});
 
   const sentEmailService = useApi(API_URLS.saveSentEmail);
   const sentDraftService = useApi(API_URLS.saveDraftEmails);
-
 
   const config = {
     Host: "smtp.elasticemail.com",
@@ -123,12 +121,12 @@ const ComposeMail = ({ setShowMailModel }) => {
       </div>
 
       <div className="to-subject mt-5 flex w-full flex-col gap-5">
-        <div>
+        <div className="flex">
           <span className="mr-5 text-sm">To</span>
           <input
             type="text"
             placeholder="recipient"
-            className="border-none text-sm outline-none"
+            className="flex-grow border-none text-sm outline-none"
             name="to"
             onChange={ValueChangeHandler}
           />
